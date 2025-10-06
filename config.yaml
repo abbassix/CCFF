@@ -1,0 +1,33 @@
+# config.yaml
+
+# Data loading parameters
+seed: 42
+dataset: "cifar100"         # Options: "mnist", "cifar10", "cifar100"
+val_ratio: 0.1
+root: "../datasets"
+download: true
+project: "train-block"
+batch_size: 64
+num_workers: 4
+
+# Data generation parameters
+data_gen_type: "patch_shuffle"  # Options: "patch_shuffle", "random_noise"
+
+# Training hyperparameters
+epochs: 10
+lr: 0.001
+optimizer: "adam"        # Options: "adam", "sgd"
+
+num_classes: 100
+
+# Model architecture (list of blocks)
+# Each block defined as: (pooling size m, number of filters n, kernel size k)
+model:
+  - [1, 8, 3]
+  - [2, 16, 3]
+  - [2, 32, 3]
+  - [2, 64, 3]
+  - [2, 128, 3]
+
+# Default channel sizes (will be inferred from dataset if needed)
+c_in: 3  # 1 for MNIST, 3 for CIFAR datasets
