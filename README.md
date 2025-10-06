@@ -1,5 +1,3 @@
-```markdown
-"""
 # Contextual Convolutions for Scalable Forward-Only Learning on Tiny Devices
 
 Official implementation of the ICCV/EV 2025 paper  
